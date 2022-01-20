@@ -5,6 +5,7 @@ import styled from "@emotion/styled"
 import SliderApp from "./slider"
 import About from "./about"
 import Carousel from "./carousel"
+import Testimonals from "./testimonals"
 
 const Main = styled('main')`
     min-height: 100vh;
@@ -15,10 +16,11 @@ export const Container = ({ children }) => {
     
     return (
         <Main>
-            <Navbar />
+            <Navbar key={1} />
             <SliderApp />
             <About />
-            {/* <Carousel/> */}
+            <Carousel key={2}/>
+            <Testimonals />
             <Footer />
         </Main>
     )

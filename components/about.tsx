@@ -28,6 +28,7 @@ import {
               fontWeight={600}
               fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
               <Text
+                color={useColorModeValue('black', 'pink.600')}
                 as={'span'}
                 position={'relative'}
                 _after={{
@@ -37,7 +38,7 @@ import {
                   position: 'absolute',
                   bottom: 1,
                   left: 0,
-                  bg: 'red.400',
+                  bg: useColorModeValue('pink.600', 'black'),
                   zIndex: -1,
                 }}>
                 Write once,
@@ -47,7 +48,7 @@ import {
                 use everywhere!
               </Text>
             </Heading>
-            <Text color={'gray.500'}>
+            <Text color={'gray.600'}>
               Snippy is a rich coding snippets app that lets you create your own
               code snippets, categorize them, and even sync them in the cloud so
               you can use them anywhere. All that is free!
@@ -70,7 +71,7 @@ import {
                 size={'lg'}
                 fontWeight={'normal'}
                 px={6}
-                leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}>
+                leftIcon={<PlayIcon h={4} w={4} color={'gray.400'} />}>
                 How It Works
               </Button>
             </Stack>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   IconButton,
@@ -33,9 +33,30 @@ export default function SliderApp() {
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
-  const top = useBreakpointValue({ base: '90%', md: '50%' });
-  const side = useBreakpointValue({ base: '30%', md: '40px' });
+  const [top, setTop] = useState('90%')
+  const [side, setSide] = useState('30%')
 
+  const resize = () =>{
+    if (window.innerWidth > 768){
+      setTop('50%');
+      setSide('40px');
+    }else{
+      setTop('90%');
+      setSide('30%');
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== undefined){
+      resize()
+    }
+  }, [])
+  
+  if(typeof window !== "undefined"){
+    window.addEventListener('resize', () => {
+      resize();
+    });
+  }
   // This list contains all the data for carousels
   // This can be static or loaded from a server
   const cards = [

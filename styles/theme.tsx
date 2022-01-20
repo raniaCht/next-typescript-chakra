@@ -18,6 +18,10 @@ const fonts = {
 
 const Overrides = {
     ...ChakraTheme,
+    config: {
+        initialColorMode: "light",
+        useSystemColorMode: false
+    },
     fonts,
     breakpoints,
     fontWeights: {
